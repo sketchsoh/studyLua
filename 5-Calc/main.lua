@@ -19,7 +19,6 @@ end
 
 io.write("Add or Subtract?: ")
 local addOrSub = io.read()
-print(addOrSub)
 if addOrSub == "add" or addOrSub == "Add" then
 	readInputs()
 	answer = add(input1, input2)
