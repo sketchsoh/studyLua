@@ -1,15 +1,19 @@
 _G.love = require("love")
+local playerInput = require("playerinput")
 
 function love.load()
 	love.graphics.setBackgroundColor(0.5, 0.5, 1, 1)
-	_G.box = {}
-	box.length = 200
-	box.x = 100
-	box.y = 100
+	_G.box = {
+		length = 200,
+		x = 100,
+		y = 100,
+	}
 end
 
 function love.update()
-	box.x = box.x + 1
+	playerInput:input()
+	box.x = box.x + playerInput.x
+	box.y = box.y + playerInput.y
 end
 
 function love.draw()
